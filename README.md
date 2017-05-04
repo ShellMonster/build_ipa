@@ -1,6 +1,7 @@
 # build_ipa
 build_ipa-fir/pgy
 **本教程主要针对xcode编译打包功能，依赖xcode自带工具包。**
+原文链接[http://www.asoheikeji.com/index.php/2017/05/04/build-ipa-fir/]
 #### 请在运行脚本前检查是否已安装xcode工具！
 ```
 xcode-select --install
@@ -17,7 +18,7 @@ sh ~/Desktop/build_ipa_fir.sh
 ### 运行截图------
 <img src="/1.jpeg" alt="1" height="300" weidth="150" > </br>
 ### 打包及导出成功截图------
-<img src="/2.jpeg" alt="2" height="200" weidth="70" > </br>
+<img src="/2.jpeg" alt="2" height="200" weidth="60" > </br>
 
 *上传成功后终端会反馈回执！
 fir反馈内容为包下载链接！
