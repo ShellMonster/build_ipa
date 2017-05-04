@@ -17,7 +17,7 @@ sh ~/Desktop/build_ipa_fir.sh
 ### 运行截图------
 <img src="/1.jpeg" alt="1" height="300" weidth="150" > </br>
 ### 打包及导出成功截图------
-<img src="/2.jpeg" alt="2" height="300" weidth="150" > </br>
+<img src="/2.jpeg" alt="2" height="300" weidth="100" > </br>
 
 *上传成功后终端会反馈回执！
 fir反馈内容为包下载链接！
