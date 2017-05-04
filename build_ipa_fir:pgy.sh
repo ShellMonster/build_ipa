@@ -1,31 +1,3 @@
-# build_ipa
-build_ipa-fir/pgy
-**本教程主要针对xcode编译打包功能，依赖xcode自带工具包。** </br>
-原文链接[http://www.asoheikeji.com/index.php/2017/05/04/build-ipa-fir/] </br>
-#### 请在运行脚本前检查是否已安装xcode工具！
-```
-xcode-select --install
-```
-
-**请在xcode内配置icon等各项，保证xcode能正常archive；**
-
-#### 运行命令------
-```
-#请自行修改sh后跟的文件路径及文件名！
-sh ~/Desktop/build_ipa_fir.sh
-```
-
-### 运行截图------
-<img src="/1.jpeg" alt="1" height="300" weidth="150" > </br>
-### 打包及导出成功截图------
-<img src="/2.jpeg" alt="2" height="200" weidth="60" > </br>
-
-*上传成功后终端会反馈回执！
-fir反馈内容为包下载链接！
-蒲公英反馈内容为json格式内容！*
-
-以下为执行脚本命令，已添加注释内容！
-```
 #!/bin/sh
 #0406测试mac打包
 #for_道长（Q_1013373636）
@@ -38,21 +10,23 @@ osascript -e 'display notification "切换执行路径" with title "打包窗口
 cd ~/Desktop/kzd-ios/
 
 #此区域请修改对应名称及目录
-scheme="kkz"
+scheme="xxxx"
 archiveName="${scheme}"
-workspaceName="kkz.xcworkspace"
+workspaceName="kzd.xcworkspace"
 configuration="Release"
 archivePath="/Users/mac/Desktop/${archiveName}$(date +%Y年%m月%d日%H:%M)"
 archivefile="/Users/mac/Desktop/${archiveName}$(date +%Y年%m月%d日%H:%M).xcarchive"
 #请注意对应release_exportOptions.plis文件路径
 exportOptionsPlist="/Users/mac/Desktop/release_exportOptions.plist"
-team_id="xxxxxxxx"#可查看钥匙串内容，查找Dist证书获取team_id。
+team_id="xxxxxxxxxxxxx"
 ipaPath="/Users/mac/Desktop/${archiveName}$(date +%Y年%m月%d日%H:%M)"
 ipafile="/Users/mac/Desktop/${archiveName}$(date +%Y年%m月%d日%H:%M)"
-#mobileprovision_uuid="xxxxxxxxx"
+#mobileprovision_uuid="xxxxxxxxxxxxxxxxxxxxx"
 #蒲公英key
-uKey="xxxxxxxxxxxxxxxx"
-api_key="xxxxxxxxxxxxxxxxxx"
+uKey="xxxxxxxxxxxxx"
+api_key="xxxxxxxxxxxxx"
+
+
 
 #清理xcodebuild缓存
 osascript -e 'display notification "清理xcodebuild缓存" with title "打包窗口输出"'
@@ -92,8 +66,3 @@ fi
 curl -F "file=@${ipafile}/${scheme}.ipa" -F "uKey=${uKey}" -F "_api_key=${api_key}" https://qiniu-storage.pgyer.com/apiv1/app/upload
 #Api帮助文档地址
 #https://www.pgyer.com/doc/api#uploadApp
-```
-
-**以上代码，可复制后保存文本为.sh格式脚本文件便于执行；也可以使用vi命令保存！**
-
-*附：笔者非专业开发人士，编写代码主要为提高工作效率及偷懒，所以遇到代码排版及bug问题可随时反馈至留言处，便于及时改正！*
