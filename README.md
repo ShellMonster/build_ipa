@@ -16,7 +16,7 @@ sh ~/Desktop/build_ipa_fir.sh
 
 ### 运行截图------
 ![](/1.jpeg)
-<img src="/1.jpeg" alt="1" height="800" weight="600" > </br>
+<img src="/1.jpeg" alt="1" height="800" weidth="600" > </br>
 ### 打包及导出成功截图------
 ![](/2.jpeg)
 
