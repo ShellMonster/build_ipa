@@ -1,4 +1,6 @@
 #### 如何利用shell脚本自动裁剪icon并导入xcode。 </br>
+
+本文博客链接：<http://www.asoheikeji.com/?p=29> </br>
 - [-] **功能：**
 - [-] 1，自动裁剪logo，按对应尺寸；
 - [-] 2，自动导入xcode路径（需配置项目路径）；
