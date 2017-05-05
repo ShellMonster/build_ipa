@@ -2,7 +2,7 @@
 build_ipa-fir/pgy </br>
 
 **本教程主要针对xcode编译打包功能，依赖xcode自带工具包。** </br>
-原文链接[http://www.asoheikeji.com/index.php/2017/05/04/build-ipa-fir/] </br>
+原文链接[http://www.asoheikeji.com/?p=1] </br>
 #### 请在运行脚本前检查是否已安装xcode工具！
 ```
 xcode-select --install
