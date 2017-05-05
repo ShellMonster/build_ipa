@@ -10,7 +10,7 @@ sh ~/Desktop/Auto_icon.sh
 ```
 
 ##### 执行时可看到导入时终端输出---  </br>
-<img src="/source/auto_icon.png" alt="如何利用shell脚本自动裁剪icon并导入xcode" height="300" width="150" >
+<img src="/source/auto_icon.png" alt="如何利用shell脚本自动裁剪icon并导入xcode" height="300" width="600" >
 
 ##### 完整代码如下，如需下载请点击后续链接跳转至git。
 ```
