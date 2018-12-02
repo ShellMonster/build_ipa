@@ -112,7 +112,7 @@ df = DataFrame({
 })
 
 df.to_csv(
-    "/Users/mac/Downloads/" + Timestamp_Time + ".csv"
+    "~/Downloads/" + Timestamp_Time + ".csv"
 )
 
-print('请至/Users/mac/Downloads/查看名为当前时间的CSV文件')
+print('请至~/Downloads/查看名为当前时间的CSV文件')
