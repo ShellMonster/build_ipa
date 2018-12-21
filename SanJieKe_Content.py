@@ -108,21 +108,25 @@ while int(page) <= int(countpage):
         comment_score = i['comment_score']  #获取作业分数
         recommend = i['recommend']   #是否强烈推荐
         user_grade = i['grade']   #是否优秀
-        print('📣学员名字：' + user_name + '......')
-        try:
-            res_teacher = requests.post(url_teacher, headers=headers_student, data={'hid': homework_id})
-            res_teacher_json = json.loads(res_teacher.text)
-            teacher_name = res_teacher_json['data'][0]['teacher_name']  # 获取助教名字
-            teacher_comment = res_teacher_json['data'][0]['comment']  # 获取助教评语
-            teacher_date = res_teacher_json['data'][0]['date']  # 获取第一次批改时间
-            #teacher_update_date = res_teacher_json['data'][0]['update_time']   #获取最后批改时间
-            teacher_update_date = time.strftime("%Y-%m-%d %H:%M:%S", (time.localtime(int(res_teacher_json['data'][0]['update_time']))))
-            save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, teacher_name, teacher_comment, teacher_date, teacher_update_date)
-        except:
-            print('💥无批改内容，跳过本次批改内容获取！！！')
-            save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, '', '', '', '', operation_title)
-        #teacher_update_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(res_teacher_json['data'][0]['update_time']))  #获取最后批改时间，并转换时间
-        a += 1
-        time.sleep(1)
+        if user_name != '道长一不会技术的推广不是好运营':
+            print('📣学员名字：' + user_name + '......')
+            try:
+                res_teacher = requests.post(url_teacher, headers=headers_student, data={'hid': homework_id})
+                res_teacher_json = json.loads(res_teacher.text)
+                teacher_name = res_teacher_json['data'][0]['teacher_name']  # 获取助教名字
+                teacher_comment = res_teacher_json['data'][0]['comment']  # 获取助教评语
+                teacher_date = res_teacher_json['data'][0]['date']  # 获取第一次批改时间
+                #teacher_update_date = res_teacher_json['data'][0]['update_time']   #获取最后批改时间
+                teacher_update_date = time.strftime("%Y-%m-%d %H:%M:%S", (time.localtime(int(res_teacher_json['data'][0]['update_time']))))
+                save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, teacher_name, teacher_comment, teacher_date, teacher_update_date)
+            except:
+                print('💥无批改内容，跳过本次批改内容获取！！！')
+                save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, '', '', '', '', operation_title)
+            #teacher_update_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(res_teacher_json['data'][0]['update_time']))  #获取最后批改时间，并转换时间
+            a += 1
+            time.sleep(1)
+        else:
+            print('本页数据有误，跳过爬取......')
+            continue
     #time.sleep(3)
     #time.sleep(random.randint(20, 60))
