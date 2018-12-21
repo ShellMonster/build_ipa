@@ -45,7 +45,7 @@ data = {
 #requestsdata = data.encode('utf-8')
 
 
-def save(name, job, id, homework_id,class_id, user_id, like_num, work_content, post_time, update_time, work_score, recommend, user_grade, teacher_name, teacher_comment, teacher_date, teacher_update_date):
+def save(name, job, id, homework_id,class_id, user_id, like_num, work_content, post_time, update_time, work_score, recommend, user_grade, teacher_name, teacher_comment, teacher_date, teacher_update_date, operation_title):
     df = DataFrame({
         '学员名字': [name],
         '学员岗位': [job],
@@ -66,7 +66,7 @@ def save(name, job, id, homework_id,class_id, user_id, like_num, work_content, p
         '最后批改时间': [teacher_update_date]
     })
     df.to_csv(
-        '~/Downloads/' + Timestamp + '.csv', mode='a', header=False
+        '~/Downloads/' + operation_title +Timestamp + '.csv', mode='a', header=False
     )
 
 
@@ -120,7 +120,7 @@ while int(page) <= int(countpage):
             save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, teacher_name, teacher_comment, teacher_date, teacher_update_date)
         except:
             print('💥无批改内容，跳过本次批改内容获取！！！')
-            save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, '', '', '', '')
+            save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, '', '', '', '', operation_title)
         #teacher_update_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(res_teacher_json['data'][0]['update_time']))  #获取最后批改时间，并转换时间
         a += 1
         time.sleep(1)
