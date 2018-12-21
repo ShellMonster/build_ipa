@@ -118,7 +118,7 @@ while int(page) <= int(countpage):
                 teacher_date = res_teacher_json['data'][0]['date']  # 获取第一次批改时间
                 #teacher_update_date = res_teacher_json['data'][0]['update_time']   #获取最后批改时间
                 teacher_update_date = time.strftime("%Y-%m-%d %H:%M:%S", (time.localtime(int(res_teacher_json['data'][0]['update_time']))))
-                save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, teacher_name, teacher_comment, teacher_date, teacher_update_date)
+                save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, teacher_name, teacher_comment, teacher_date, teacher_update_date, operation_title)
             except:
                 print('💥无批改内容，跳过本次批改内容获取！！！')
                 save(user_name, user_job, id, homework_id, class_id, user_id, like_count, user_content, create_time, update_time, comment_score, recommend, user_grade, '', '', '', '', operation_title)
