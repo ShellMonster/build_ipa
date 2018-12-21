@@ -31,7 +31,7 @@ headers_student = {
 question_id = int(input('请输入作业编号：'))     #11735936 测试编号
 page = 1
 cid = int(input('请输入班级编号：'))          #12129770   测试编号
-grade = int(input('请输入需要爬取的作业类型，"0"为全部爬取，"1"为仅爬取优秀作业：'))   #0  测试编号
+grade = 0   #int(input('请输入需要爬取的作业类型，"0"为全部爬取，"1"为仅爬取优秀作业：'))   #0  测试编号
 Timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(int(time.time())))   #获取当前时间
 
 
