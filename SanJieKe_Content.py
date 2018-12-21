@@ -1,7 +1,7 @@
 import requests,json,time
 from pandas import DataFrame
 
-cookie = str(input('请输入你从浏览器复制的cookie信息：'))
+cookie = str(input('\n请输入你从浏览器复制的cookie信息：'))
 headers_teacher = {
     'accept': 'application/json, text/plain, */*',
     'accept-encoding': 'gzip, deflate, br',
@@ -124,5 +124,5 @@ while int(page) <= int(countpage):
         #teacher_update_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(res_teacher_json['data'][0]['update_time']))  #获取最后批改时间，并转换时间
         a += 1
         time.sleep(1)
-    time.sleep(3)
+    #time.sleep(3)
     #time.sleep(random.randint(20, 60))
